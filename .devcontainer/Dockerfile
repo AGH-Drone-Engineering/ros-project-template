@@ -18,6 +18,7 @@ RUN apt-get install -y vim git curl wget
 
 # source ROS at startup
 RUN echo source /opt/ros/${ROS_DISTRO}/setup.bash >> /root/.bashrc
+RUN echo source /workspaces/*/catkin_ws/devel/setup.bash >> /root/.bashrc
 
 
 CMD ["x11vnc", "-create", "-forever"]
